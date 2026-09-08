@@ -5,7 +5,7 @@ export const social = {
   githubUsername: "sibusisomakaula",
   githubUrl: "https://github.com/sibusisomakaula",
   linkedinUrl: "https://www.linkedin.com/in/sibusiso-makaula",
-  email: "YOUR_EMAIL",
+  email: "makaulasibusiso06@gmail.com",
   location: "Cape Town, South Africa",
 } as const
 
