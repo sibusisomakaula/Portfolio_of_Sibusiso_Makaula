@@ -2,8 +2,8 @@
 // Change these values once and they update everywhere across the site.
 
 export const social = {
-  githubUsername: "YOUR_GITHUB_USERNAME",
-  githubUrl: "https://github.com/YOUR_GITHUB_USERNAME",
+  githubUsername: "sibusisomakaula",
+  githubUrl: "https://github.com/sibusisomakaula",
   linkedinUrl: "https://www.linkedin.com/in/YOUR_LINKEDIN_URL",
   email: "YOUR_EMAIL",
   location: "Cape Town, South Africa",
