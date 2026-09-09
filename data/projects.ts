@@ -24,6 +24,9 @@ export type Project = {
   liveUrl?: string
   image?: string
   featured?: boolean
+  // Set when the project was built as part of a team (repo may live under a
+  // teammate's account). Renders a small "Team Project" badge on the card.
+  teamProject?: boolean
   // Case-study fields (all optional).
   overview?: string
   problem?: string
@@ -163,6 +166,97 @@ export const projects: Project[] = [
       "Practical experience connecting a React frontend to a Spring Boot backend.",
       "How authentication and data access fit together in a full-stack app.",
       "The value of an honest, iterative approach — shipping what works and clearly noting what is still in progress.",
+    ],
+  },
+  {
+    slug: "createflow-ai",
+    title: "CreateFlow AI",
+    type: "AI / Full Stack",
+    category: ["AI", "Full Stack"],
+    description:
+      "A lightweight AI content creation workspace that generates emails, blog posts, social media copy, product descriptions, code snippets and images — all from one place. Includes a local prompt library for reusing prompts and a generation history to track past outputs.",
+    technologies: ["AI", "Content Generation", "Prompt Library", "Full Stack"],
+    features: [
+      "Multi-format content generation",
+      "Email, blog & social copy",
+      "Product descriptions",
+      "Code snippet generation",
+      "Image generation",
+      "Local prompt library",
+      "Generation history",
+    ],
+    githubUrl: "https://github.com/sibusisomakaula/createflow-ai",
+    image: "/images/projects/createflow-ai.png",
+    featured: true,
+    overview:
+      "A single AI content creation workspace that brings emails, blog posts, social media copy, product descriptions, code snippets and images together in one place, with a reusable prompt library and a history of past generations.",
+    problem:
+      "Creators juggle multiple tools for different content types and constantly rewrite the same prompts. There was no single, lightweight space to generate varied content and reuse what already worked.",
+    solution:
+      "CreateFlow AI provides one workspace for all content types. A local prompt library lets users save and reuse effective prompts, while a generation history keeps every past output accessible for reference and iteration.",
+    role:
+      "Creator — I designed and built the workspace end to end, including the multi-format generation flow, the prompt library and the generation history.",
+    architecture: [
+      { label: "Prompt Input", detail: "Choose a content type" },
+      { label: "Prompt Library", detail: "Reuse saved prompts" },
+      { label: "AI Generation", detail: "Text & image output" },
+      { label: "Generation History", detail: "Track past outputs" },
+    ],
+    challenges: [
+      "Supporting many content formats through one consistent interface.",
+      "Persisting the prompt library and history locally so nothing is lost between sessions.",
+      "Keeping the workspace lightweight while covering both text and image generation.",
+    ],
+    lessonsLearned: [
+      "Designing a single interface that adapts to very different content types.",
+      "How a reusable prompt library and history improve day-to-day AI workflows.",
+      "Balancing feature breadth with a lightweight, focused product.",
+    ],
+  },
+  {
+    slug: "capa-buddy",
+    title: "CAPA-Buddy",
+    type: "AI / Team Project",
+    category: ["AI", "Frontend"],
+    description:
+      "An AI-powered FAQ assistant built for a weekly training programme. Answers candidates' most common questions instantly — course access, submissions and project instructions — using smart answer routing and a self-learning FAQ list that flags recurring questions for staff review. Admin access is PIN-based with no login system required.",
+    technologies: ["AI", "React", "Supabase", "Claude API"],
+    features: [
+      "Instant FAQ answers",
+      "Smart answer routing",
+      "Self-learning FAQ list",
+      "Recurring question flagging",
+      "PIN-based admin access",
+      "No login system required",
+    ],
+    githubUrl: "https://github.com/NatashaNjili/CAPA-Buddy",
+    image: "/images/projects/capa-buddy.png",
+    featured: true,
+    teamProject: true,
+    overview:
+      "An AI-powered FAQ assistant for a weekly training programme that answers candidates' most common questions instantly — course access, submissions and project instructions — and learns from recurring questions over time.",
+    problem:
+      "Candidates repeatedly asked staff the same questions about course access, submissions and project instructions, creating a heavy, repetitive support load each week.",
+    solution:
+      "CAPA-Buddy uses smart answer routing to respond instantly and a self-learning FAQ list that flags recurring questions for staff review. Admin access is PIN-based, so staff can manage it without any login system.",
+    role:
+      "Contributor / Admin — built as part of a team, with the repository hosted under a teammate's account. I contributed to the assistant and its admin workflow.",
+    architecture: [
+      { label: "Candidate Question", detail: "Asked in chat" },
+      { label: "Smart Routing", detail: "Matches best answer" },
+      { label: "Claude API", detail: "Generates responses" },
+      { label: "Supabase", detail: "Stores FAQ & flags" },
+      { label: "Admin (PIN)", detail: "Reviews flagged questions" },
+    ],
+    challenges: [
+      "Routing candidate questions to the right answer reliably.",
+      "Building a self-learning FAQ that flags recurring questions without noise.",
+      "Providing admin control through a simple PIN rather than a full login system.",
+    ],
+    lessonsLearned: [
+      "Integrating the Claude API with React and Supabase in a real product.",
+      "Collaborating within a team on a shared codebase hosted under a teammate's account.",
+      "Designing lightweight admin access that fits the programme's needs.",
     ],
   },
 ]

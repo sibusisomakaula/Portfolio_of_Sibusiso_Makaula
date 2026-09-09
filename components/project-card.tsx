@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowUpRight, ExternalLink } from "lucide-react"
+import { ArrowUpRight, ExternalLink, Users } from "lucide-react"
 import { GithubIcon } from "@/components/brand-icons"
 import type { Project } from "@/data/projects"
 import { hasLink } from "@/lib/links"
@@ -33,6 +33,12 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="absolute right-3 top-3 flex size-8 items-center justify-center rounded-full bg-background/80 text-foreground opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
           <ArrowUpRight className="size-4" />
         </span>
+        {project.teamProject ? (
+          <Badge className="absolute left-3 top-3 gap-1 border-transparent bg-background/85 text-xs font-medium text-foreground backdrop-blur">
+            <Users className="size-3" />
+            Team Project
+          </Badge>
+        ) : null}
       </Link>
 
       <div className="flex flex-1 flex-col p-5">
